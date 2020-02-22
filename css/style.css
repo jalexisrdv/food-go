@@ -1,0 +1,768 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;/*Reset rem -> 1 rem = 10px*/
+}
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 2;
+    font-size: 1.6rem;
+}
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 2.6rem;
+}
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem /*1200px*/;
+    margin: 0 auto;
+}
+
+/*Utilidades*/
+.icono {
+    color: white;
+    font-size: 3.5rem;
+}
+.seccion {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.fw-300 {
+    font-weight: 300;
+}
+.centrar-texto {
+    text-align: center;
+}
+.boton {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+.boton-verde {
+    background-color: #659b00;
+}
+.br {
+    border-radius: 0.5rem;
+}
+.mg-top {
+    margin-top: 2rem;
+}
+.info-alimento h3 {
+    margin-bottom: 2rem;
+}
+.text-shadow {
+    text-shadow: 1px 1px 2px black;
+}
+.padding-2 {
+    padding: 2rem;
+}
+
+/*Header Index*/
+.site-header.inicio {
+    min-height: 60rem;
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,.4)), url("https://1.bp.blogspot.com/-WDenSFKUx1o/XefjbQiJOJI/AAAAAAAAHHU/ZflpdJhxf-YAzrU27cVc0RIIongLf4hpACLcBGAsYHQ/s1600/hero.jpg");
+    background-repeat: no-repeat;
+}
+
+.barra-navegacion.inicio {
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .barra-navegacion.inicio {
+        align-items: unset;
+    }
+}
+.barra-navegacion.inicio {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .barra-navegacion.inicio {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem 1rem 2rem;
+    align-items: center;
+}
+
+.navegacion a, 
+.navegacion .menu-movil a {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    margin-right: 4rem;
+    text-transform: capitalize;
+}
+.navegacion a:hover {
+    color: #86ce00;
+}
+.contador {
+    display: none;
+}
+.carrito-compras a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.contador-activo {
+    display: inline-table;
+    background:white;
+    padding: 0.2rem 0.3rem 0.2rem 0.2rem;
+    margin-left: 0.5rem;
+    border-radius: 2rem;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.imagen-contacto {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,.5)), url('https://1.bp.blogspot.com/-FrFdEcNs6co/XefkWWJ7yxI/AAAAAAAAHHc/ScH4SVCSiu4CjGU8eJIY4scHk_wAF0wPACLcBGAsYHQ/s1600/contacto.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+}
+.contenido-contacto {
+    color: white;
+}
+
+.contenido-contacto h2 {
+    margin-bottom: 4rem;
+}
+.contenido-contacto p {
+    margin-bottom: 4rem;
+}
+
+/*Header Alimentos*/
+.site-header.alimentos {
+    background-color: #324c00;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.navegacion .menu-escritorio {
+    display: none;
+}
+@media (min-width: 768px) {
+    .navegacion .menu-escritorio {
+        display: flex;
+    }
+    .navegacion .menu-escritorio li {
+        margin-right: 1rem;
+    }
+    .navegacion .menu-escritorio ul {
+        display: none;
+    }
+    .navegacion .menu-escritorio li:hover ul {
+        position: absolute;
+        display: block;
+        background-color: #496F00;
+        width: 20rem;
+    }
+    .navegacion .menu-escritorio ul li {
+        width: 100%;
+    }
+    .navegacion .menu-escritorio ul li:hover {
+        background-color: #233305;
+    }
+    .navegacion .menu-escritorio ul li a {
+        display: block;
+        margin: 0 1rem;
+    }
+    .navegacion .menu-escritorio ul li a:hover {
+        color: #fff;
+    }
+}
+
+.navegacion .menu-movil {
+    position: fixed;
+    display: none;
+    height: calc(100% - 9.4rem);
+    left: 0;
+    top: 9.4rem;
+    z-index: 999;
+    overflow: scroll;
+    width: calc(85% - 1rem);
+    background-color: #324c00;
+}
+@media (min-width: 480px) {
+    .navegacion .menu-movil {
+        width: 40rem;
+    }
+}
+@media (min-width: 768px) {
+    .navegacion .btn-menu-movil {
+        display: none;
+    }
+}
+.navegacion ul li {
+    list-style: none;
+}
+.navegacion .menu-movil li a .icono-d {
+    float: right;
+    margin: 1rem 0;
+}
+.navegacion .menu-movil > li {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+.navegacion .menu-movil li a {
+    display: block;
+    padding: 0.5rem 2rem;
+    margin-right: 0;
+}
+.navegacion .menu-movil li a:hover {
+    background-color: #233305;
+    color: #fff;
+}
+.navegacion .menu-movil .activado > a {
+    background-color: #233305;
+}
+.navegacion .menu-movil ul {
+    display: none;
+}
+.navegacion .menu-movil ul li a {
+    background-color: #496F00;
+}
+
+/*MENU ALIMENTOS*/
+.navegacion-y-carrito {
+    display: flex;
+}
+
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contenido-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    margin: 0 2rem;
+    color: #fff;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .contenido-hero {
+        margin: 0;
+    }
+}
+.contenido-hero h1 {
+    margin: 0;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+.contenido-hero p {
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px black;
+}
+
+/*Barra*/
+.barra {
+    background: linear-gradient(to right, #324c00 0%, #88CE02 100%);
+}
+.barra-contenido {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    text-align: center;
+    min-height: 6rem;
+    padding: 2rem;
+}
+@media (min-width: 768px) {
+    .barra-contenido {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.barra-contenido p {
+    margin: 0;
+    line-height: 1.5;
+}
+.barra .icono {
+    font-size: 5rem;
+}
+.icono-barra .icono {
+    margin-right: 2rem;
+}
+.icono-barra {
+    margin: 2rem;
+}
+@media (min-width: 768px) {
+    .icono-barra {
+        display: flex;
+    }
+}
+
+/*Contenido Principal*/
+.contenido-principal {
+    display: flex;
+    flex-direction: column;
+}
+.alimentos.inicio {
+    display: grid;
+}
+.inicio .alimento {
+    margin-bottom: 2rem;
+}
+@media (min-width: 1024px) {
+    .alimentos.inicio {
+        grid-template-columns: repeat(3, 33.3%);
+    }
+    .inicio .alimento {
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .alimentos.inicio {
+        grid-template-columns: repeat(2, 50%);
+    }
+    .inicio .alimento {
+        margin-bottom: 0;
+    }
+}
+.inicio .alimento .icono {
+    position: absolute;
+    z-index: 999;
+    top: 1rem;
+    right: 1rem;
+}
+.alimento {
+    position: relative;
+}
+.inicio .alimento {
+    max-height: 100%;
+}
+
+.inicio .info-alimento {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    z-index: 1;
+    color: white;
+}
+.inicio .info-alimento {
+    padding: 2rem 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+.inicio .info-alimento p {
+    font-size: 2rem;
+}
+.inicio .alimento img {
+    width: 100%;
+    height: 100%;
+}
+.gradiente::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0,0,0,.6);
+}
+.comprar-alimentos {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+/*Sobre Nosotros*/
+.contenedor-nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+}
+.icono-nosotros {
+    text-align: center;
+    flex-basis: calc(33.3% - 1rem);
+    margin-bottom: 4rem;
+}
+.icono-nosotros:last-of-type {
+    margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .contenedor-nosotros {
+        flex-direction: row;
+    }
+    .icono-nosotros {
+        margin-bottom: 0;
+    }
+}
+.icono-nosotros .icono {
+    color: #375500;
+    font-size: 10rem;
+}
+.icono-nosotros h3 {
+    text-transform: uppercase;
+    margin: 3rem 0;
+}
+
+/*Footer*/
+.site-footer {
+    background-color: #659b00;
+    padding: 2rem;
+}
+.site-footer p {
+    margin: 0;
+    color: white;
+}
+.contenido-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-footer .navegacion a:hover {
+    color: #233305;
+}
+
+/*Contenido Alimentos Venta*/
+.main-alimentos {
+    margin-bottom: 2rem;
+    padding-top: 9rem;
+}
+.seccion-alimentos {
+    padding: 2rem;
+}
+.venta .alimento {
+    border: 1px solid #B5B5B5;
+    background-color: #F5F5F5;
+    margin-bottom: 2rem;
+}
+.venta .alimento:last-of-type {
+    margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .venta .alimentos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        margin-bottom: 0;
+        gap: 2rem;
+    }
+}
+.venta .alimento img {
+    width: 100%;
+}
+.venta .info-alimento {
+    padding: 2rem;
+}
+.venta .info-alimento h3 {
+    line-height: 1.2;
+    margin: 0;
+    font-size: 2.5rem;
+}
+.venta .precio {
+    color: #71B100;
+    font-weight: 700;
+}
+.info-alimento input {
+    width: 100%;
+    padding: 0.5rem;
+}
+.info-alimento .error-unidades {
+    border: 1px solid red;
+}
+.info-alimento .contenedor-unidades {
+    margin: 2rem 0;
+}
+.venta .info-alimento .boton {
+    display: block;
+}
+.venta .opciones {
+    display: flex;
+    flex-direction: column;
+}
+.opciones {
+    margin-bottom: 2rem;
+}
+
+/*CheckBox dentro de Select*/
+ .selectBox {
+    position: relative;
+}
+
+.selectBox select {
+    width: 100%;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkboxes {
+    position: relative;
+    display: none;
+}
+.casillas {
+    position: absolute;
+    border: 1px #dadada solid;
+    background-color: white;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+}
+
+[type="checkbox"] {
+    margin-right: 1rem;
+}
+
+#checkboxes label {
+    display: block;
+}
+
+#checkboxes label:hover {
+    background-color: #1e90ff;
+}
+
+/*Carrito Finalizar Compra*/
+.main-alimentos-carrito {
+    padding: 10rem 2rem 2rem 2rem;
+}
+.main-alimentos-carrito h2, .seccion-alimentos.venta h2 {
+    margin: 0;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+.seccion-carrito h3, .seccion-carrito p {
+    margin: 0;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .contenedor-carrito {
+        display: flex;
+    }
+    .seccion-carrito {
+        flex-basis: calc(70% - 2rem);
+        margin-right: 2rem;
+    }
+
+}
+.seccion-carrito .alimento {
+    margin-bottom: 2rem;
+    justify-content: space-between;
+    border: 1px solid #B5B5B5;
+    background-color: #F5F5F5;
+}
+@media (min-width: 768px) {
+    .seccion-carrito .alimento {
+        display: flex;
+    }
+}
+.seccion-carrito .alimento img {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .seccion-carrito .alimento .imagen {
+        flex-basis: calc(30% - 1rem);
+        display: flex;
+    }
+}
+
+.seccion-carrito .alimento .info-alimento {
+    flex-basis: calc(70% - 1rem);
+}
+.seccion-carrito .info-alimento {
+    padding: 2rem;
+}
+.seccion-carrito .opciones #cantidad {
+    margin-top: 2rem;
+}
+.contenedor-borrar-alimento {
+    text-align: right;
+}
+.contenedor-borrar-alimento a {
+    background-color: #999;
+    color: white;
+    padding: 0.2rem 1rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    text-decoration: none;
+}
+.contenedor-borrar-alimento a:hover {
+    background-color: #d24949;
+}
+
+.resumen-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .resumen-carrito {
+        display: unset;
+        flex-basis: calc(30% - 1rem);
+    }
+}
+.resumen-carrito p {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+button[type="submit"], input[type="submit"] {
+    padding: 1rem 2rem;
+    color:white;
+    border: 0;
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    background-color: #659b00;
+    cursor: pointer;
+}
+.resumen-carrito {
+    padding-top: 2rem;
+}
+@media (min-width: 768px) {
+    .resumen-carrito {
+        padding: 2rem;
+    }
+}
+.contenido-carrito {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 10px rgba(50,50,50,0.14);
+    border: 1px solid#eee;
+}
+.resumen-carrito .resumen-pedido {
+    background-color: #324c00;
+    padding: 0 2rem;
+    text-align: center;
+}
+.resumen-carrito .resumen-pedido p {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+}
+.pago-total {
+    margin-bottom: 1rem;
+}
+.contenedor-pago {
+    align-self: center;
+    padding: 2rem;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .resumen-carrito {
+        padding: 0;
+    }
+}
+
+/*FORMA DE PAGO*/
+.carrito-pago {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 10px rgba(50,50,50,0.14);
+    border: 1px solid#eee;
+}
+@media (min-width: 768px) {
+    .dos-cols {
+        display: grid;
+        grid-template-areas: 
+        "col1 col2"
+        ;
+        grid-template-columns: repeat(2, 50%);
+    }
+    .col-1 {
+        grid-area: col1;
+    }
+    .col-2 {
+        grid-area: col2;
+    }
+}
+.head {
+    display: grid;
+    grid-template-areas: 
+    "head head"
+    "body body";
+    background-color:#324c00;
+    padding: 0.8rem 2rem;
+}
+.head p {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+}
+.head .col-opcion-pago {
+    grid-area: head;
+}
+.body {
+    grid-area: body;
+    padding: 2rem;
+}
+.seccion-carrito.pago input[type="text"],
+.seccion-carrito.pago input[type="email"],
+.seccion-carrito.pago input[type="number"] {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border: 1px solid #dbdbdb;
+}
+@media (min-width: 768px) {
+    .seccion-carrito.pago input[type="text"],
+    .seccion-carrito.pago input[type="email"],
+    .seccion-carrito.pago input[type="number"] {
+        width: 95%;
+    }
+}
+#campos-nueva-tarjeta {
+    display: none;
+}
+#campos-nueva-tarjeta.checked {
+    display: block;
+}
+.error {
+    display: none;
+    background-color:#b32424;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+.error p {
+    margin: 0;
+    color: white;
+}
+.error.activo {
+    display: inline-block;
+}
